@@ -1,5 +1,0 @@
-still running test for the gitflow automate function
-
-fine tuning the gitcombo
-
-another refactor

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-alias dev='cd Webdev'
+alias dev='cd Webdev && cd' $1
 alias c='clear'
 
 
@@ -19,7 +19,13 @@ alias grm='git branch -a' #get remote branch
 
 gitcombo(){
     gal
-    gcmc
+    message=""
+    for arg in "$@"
+    do
+        message+="$arg"
+        message+=" "
+    done
+    gcm "$message"
     gp
 }
 
@@ -27,7 +33,7 @@ gitcombo(){
 
 #Utilities
 alias update="sudo apt update && sudo apt upgrade"
-alias edbash="code ~/.custom_aliases"
+alias edbash="code . ~/.custom_aliases"
 alias reload="source ~/.custom_aliases"
 
 HISTTIMEFORMAT="%F %T "
@@ -49,11 +55,17 @@ stopcoding(){
     pkill gnome-terminal- 
 }
 
-chrome='/opt/google/chrome/chrome'
+alias chrome='/opt/google/chrome/chrome'
+alias gitrepo='open https://github.com/netman5'
 
 function daily(){
-   open $chrome
+   open gitrepo
     # tmp
+}
+
+cl(){
+    cd $1
+    ls -la
 }
 
 # View the calender by typing the first three letters of the month.
