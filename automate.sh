@@ -19,13 +19,7 @@ alias grm='git branch -a' #get remote branch
 
 gitcombo(){
     gal
-    message=''
-    for arg in "$@"
-    do
-        message +="$arg"
-        message +=" "
-    done
-    gcm
+    gcmc
     gp
 }
 
