@@ -60,6 +60,19 @@ web(){
     fi
 }
 
+
+# Node folder structure
+alias mvc='mkdir models controllers public db middleware errors routes && touch app.js'
+
+node_pro(){
+    read -p 'Enter Project directory name: ' name
+    if [ $PWD == ~/Webdev ]; then
+        mkdir $name && cd $name && gi && $init && mvc && ce
+    else
+        mkd $name && cd $name && gi && $init && mvc && ce
+    fi
+}
+
 #Utilities
 alias update="sudo apt update && sudo apt upgrade"
 alias edbash="code . ~/.custom_aliases"
